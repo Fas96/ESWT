@@ -9,7 +9,7 @@
                                             <h4>Member Login</h4>
                                              <form class="login-form" method="post" name="login">
                                                 <div class="form-group">
-                                                    <label>Member ID</label>
+                                                     <label>Member N&#8711;</label>
                                                     <input type="text" class="form-control" name="member_id" placeholder="member_id" required >
                                                 </div>
                                                 <div class="form-group">
