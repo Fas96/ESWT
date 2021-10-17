@@ -4,37 +4,37 @@
         <div class="nano">
             <div class="nano-content">
                 <ul>
-                    <div class="logo"><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/index.php">
-                             <img src="../assets/images/logo.png" alt="" height="20%" width="20%" /> <span>ESWT</span></a></div>
+                    <div class="logo"><a href="/ESWT/admin/index.php">
+                             <img src="/ESWT/assets/images/logo.png" alt="" height="20%" width="20%" /> <span>ESWT</span></a></div>
                     <li class="label">Main</li>
-                    <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/index.php"  ><i class="ti-home"></i> Dashboard </a>
+                    <li><a href="/ESWT/admin/index.php"  ><i class="ti-home"></i> Dashboard </a>
                     </li>
 
                     <li class="label">Apps</li>
                       <li><a class="sidebar-sub-toggle"><i class="ti-email"></i> Questions <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/question/question-create.php">create</a></li>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/question/question-edit.php">Edit</a></li>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/question/question-list.php">list</a></li>
+                            <li><a href="/ESWT/admin/question/question-create.php">create</a></li>
+                            <li><a href="/ESWT/admin/question/question-edit.php">Edit</a></li>
+                            <li><a href="/ESWT/admin/question/question-list.php">list</a></li>
                         </ul>
                     </li>
 
                       <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Data <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/data/score-list.php">students Score list </a></li>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/data/score-export.php">Students Data Export</a></li>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/data/score-edit.php">Edit Student Data </a></li>
+                            <li><a href="/ESWT/admin/data/score-list.php">students Score list </a></li>
+                            <li><a href="/ESWT/admin/data/score-export.php">Students Data Export</a></li>
+                            <li><a href="/ESWT/admin/data/score-edit.php">Edit Student Data </a></li>
                         </ul>
                     </li>
                      <li><a class="sidebar-sub-toggle"><i class="ti-headphone-alt"></i> Audio <span
                                 class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/audio/audio-list.php">Audio Files List</a></li>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/audio/audio-export.php">Audio Files Export</a></li>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/audio/audio-edit.php">Edit Students Audio </a></li>
-                            <li><a href="<?=str_replace('C:\xampp\htdocs\ESWT\admin','/ESWT/admin',dirname(__FILE__)); ?>/audio/audio-test.php">Audio test </a></li>
+                            <li><a href="/ESWT/admin/audio/audio-list.php">Audio Files List</a></li>
+                            <li><a href="/ESWT/admin/audio/audio-export.php">Audio Files Export</a></li>
+                            <li><a href="/ESWT/admin/audio/audio-edit.php">Edit Students Audio </a></li>
+                            <li><a href="/ESWT/admin/audio/audio-test.php">Audio test </a></li>
                         </ul>
                     </li>
 
