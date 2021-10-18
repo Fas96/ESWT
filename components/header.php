@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin: Widget</title>
+    <title>ESWT|배재대</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->

@@ -1,5 +1,5 @@
-
-
+<?php session_start(); header("Content-type:text/html;charset=utf-8"); ?>
+<?php if(empty($_SESSION)) { header("Location:/ESWT/login.php");die;} ?>
 <?php require("../components/admin-header.php")?>
 
 <?php require("sidebar.php")?>
@@ -30,7 +30,7 @@
                                                     <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                         <div class="notification-text">5 members joined today </div>
                                                     </div>
                                                 </a>
@@ -60,7 +60,7 @@
                                                     <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/3.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                         <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
                                                     </div>
                                                 </a>
@@ -100,7 +100,7 @@
                                                     <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/2.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                         <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
                                                     </div>
                                                 </a>
@@ -120,7 +120,7 @@
                                                     <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/2.jpg" alt="" />
                                                     <div class="notification-content">
                                                         <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                        <div class="notification-heading">Mr. John</div>
+                                                        <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                         <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
                                                     </div>
                                                 </a>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="dropdown dib">
                             <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">John
+                                <span class="user-avatar"><?=$_SESSION['member_name'] ?>
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                                 <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
@@ -172,7 +172,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="/ESWT/components/logout.php">
                                                     <i class="ti-power-off"></i>
                                                     <span>Logout</span>
                                                 </a>

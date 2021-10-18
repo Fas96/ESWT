@@ -1,4 +1,5 @@
-
+<?php session_start(); header("Content-type:text/html;charset=utf-8"); ?>
+<?php if(empty($_SESSION)) { header("Location:/ESWT/login.php");die;} ?>
 <?php require("../../components/admin-header.php") ;
 
 require("../sidebar.php");?>
@@ -30,7 +31,7 @@ require("../sidebar.php");?>
                                                 <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/3.jpg" alt="" />
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                    <div class="notification-heading">Mr. John</div>
+                                                    <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                     <div class="notification-text">5 members joined today </div>
                                                 </div>
                                             </a>
@@ -60,7 +61,7 @@ require("../sidebar.php");?>
                                                 <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/3.jpg" alt="" />
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                    <div class="notification-heading">Mr. John</div>
+                                                    <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                     <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
                                                 </div>
                                             </a>
@@ -100,7 +101,7 @@ require("../sidebar.php");?>
                                                 <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/2.jpg" alt="" />
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                    <div class="notification-heading">Mr. John</div>
+                                                    <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                     <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
                                                 </div>
                                             </a>
@@ -120,7 +121,7 @@ require("../sidebar.php");?>
                                                 <img class="pull-left m-r-10 avatar-img" src="/ESWT/assets/images/avatar/2.jpg" alt="" />
                                                 <div class="notification-content">
                                                     <small class="notification-timestamp pull-right">02:34 PM</small>
-                                                    <div class="notification-heading">Mr. John</div>
+                                                    <div class="notification-heading"><?=$_SESSION['member_name'] ?></div>
                                                     <div class="notification-text">Hi Teddy, Just wanted to let you ...</div>
                                                 </div>
                                             </a>
@@ -135,7 +136,7 @@ require("../sidebar.php");?>
                     </div>
                     <div class="dropdown dib">
                         <div class="header-icon" data-toggle="dropdown">
-                                <span class="user-avatar">John
+                                <span class="user-avatar"><?=$_SESSION['member_name'] ?>
                                     <i class="ti-angle-down f-s-10"></i>
                                 </span>
                             <div class="drop-down dropdown-profile dropdown-menu dropdown-menu-right">
@@ -172,7 +173,7 @@ require("../sidebar.php");?>
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="/ESWT/components/logout.php">
                                                 <i class="ti-power-off"></i>
                                                 <span>Logout</span>
                                             </a>
@@ -223,12 +224,61 @@ require("../sidebar.php");?>
                     <div class="card-body">
                         <div class="compose-content">
                             <h4>Questions List</h4>
-
                         </div>
                     </div>
                 </div>
             </div>
             <!-- row -->
+            <!-- /# row -->
+            <section id="main-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="bootstrap-data-table-panel">
+                                <div class="table-responsive">
+                                    <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>TYPE</th>
+                                            <th>TITLE</th>
+                                            <th>CONTENT</th>
+                                            <th>PREP TIME</th>
+                                            <th>RES TIME</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+
+                                        <?php
+                                        require('../../dbconnection/connectdb.php');
+
+                                        $query    = "SELECT question_type, question_title,question_content,question_prepTime,question_resTime FROM question";
+                                                  $result = mysqli_query($con, $query) or die(mysql_error($con));
+
+                                        $rows = mysqli_num_rows($result);
+                                        while($data = mysqli_fetch_array($result)) {
+                                        ?>
+                                        <tr>
+                                            <td><?=$data['question_type']?></td>
+                                            <td><?=$data['question_title']?></td>
+                                            <td><?=$data['question_content']?></td>
+                                            <td><?=$data['question_prepTime']?></td>
+                                            <td><?=$data['question_resTime']?></td>
+                                        </tr>
+                                            <?php
+
+                                        }
+
+                                        ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# card -->
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
             <!-- /# row -->
             <section id="main-content">
                 <div class="row">
@@ -246,5 +296,17 @@ require("../sidebar.php");?>
         </div>
     </div>
 </div>
+
+    <!-- scripit init-->
+    <script src="/ESWT/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/buttons.flash.min.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="/ESWT/assets/js/lib/data-table/datatables-init.js"></script>
+
 
 <?php require("../../components/admin-footer.php");?>

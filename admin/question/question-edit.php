@@ -1,4 +1,5 @@
-
+<?php session_start(); header("Content-type:text/html;charset=utf-8"); ?>
+<?php if(empty($_SESSION)) { header("Location:/ESWT/login.php");die;} ?>
 <?php require("../../components/admin-header.php") ;
 
  require("../sidebar.php");?>
@@ -172,7 +173,7 @@
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="#">
+                                                <a href="/ESWT/components/logout.php">
                                                     <i class="ti-power-off"></i>
                                                     <span>Logout</span>
                                                 </a>
